@@ -1,0 +1,121 @@
+
+<mat-toolbar color="primary">
+  
+    <mat-toolbar-row>
+      <button mat-icon-button>
+        <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+      </button>
+      <h1 >Customers Management</h1>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a mat-button> profile </a></li>
+          <li><a mat-button> login</a></li>
+          <li><a mat-button >logout </a></li>
+        </ul>
+        </div>
+      
+    </mat-toolbar-row>
+   </mat-toolbar>
+   
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav>
+      <mat-nav-list>
+  
+        <a mat-list-item routerLink="" (click)="customersPage()"> Customers </a>
+        <a mat-list-item routerLink="" (click)="ordersPage()"> Orders </a>
+        
+        <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
+  
+      </mat-nav-list>
+    </mat-sidenav>
+     <mat-sidenav-content>
+      <div style="height: 50vh;">
+         <router-outlet></router-outlet>
+      </div>
+      
+  </mat-sidenav-content> 
+</mat-sidenav-container>
+  
+<!-- (ngSubmit)="onSubmit(f)" -->
+  <div class="row" style="margin-left: 40px; margin-bottom:150px;">
+    <div class="col-xs-12">
+        <form  #f="ngForm">
+            <div class="row">
+                <div class="col-sm-2 form-group">
+                    <label for="first_name">FirstName</label>
+                    <input 
+                    type="text"
+                    id="first_name"
+                    class="form-control"
+                    name="first_name"
+                    ngModel
+                    >
+                </div>
+                <div class="col-sm-2 form-group">
+                 <label for="last_name">LastName</label>
+                 <input 
+                 type="text"
+                 id="last_name"
+                 class="form-control"
+                 name="last_name"
+                 ngModel
+                 >
+             </div>
+                <div class="col-sm-2 form-group">
+                   <label for="address">Address</label>
+                   <input 
+                   type="string"
+                   id="address"
+                   class="form-control"
+                   name="address"
+                   ngModel
+                   >
+               </div>
+               <div class="col-sm-2 form-group">
+                   <label for="city">City</label>
+                   <input 
+                   type="text"
+                   id="city"
+                   class="form-control"
+                   name="city"
+                   ngModel
+                   >
+               </div>
+               <div class="col-sm-2 form-group">
+                   <label for="state">State</label>
+                   <input 
+                   type="text"
+                   id="state"
+                   class="form-control"
+                   name="state"
+                   ngModel
+                   >
+               </div>
+         <div class="row" style='padding-top:20px'>
+               <button                  
+                  class="btn btn-success"
+                  type="submit"
+                  style='margin-left:40px; margin-top: 2px;'
+                  (click)="add(f)"
+                  >Add</button>
+              <!-- <button 
+               class="btn btn-success"
+               type="submit"
+               style='margin-right:5px'
+               (click)="update()"
+               >Update</button>
+             
+             
+               <button                 
+               class="btn btn-success"
+               style='margin-right:5px'
+               type="submit"
+               (click)="delete()"
+               >Delete</button> -->
+             </div>
+                       
+            </div>
+        </form>
+    </div>
+  </div>
+  
