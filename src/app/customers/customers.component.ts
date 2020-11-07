@@ -13,7 +13,7 @@ export class CustomersComponent implements OnInit {
   data = this.detailsService.getDetails( );
   
   
-  //This is a test
+  
   
   
   // search() {
